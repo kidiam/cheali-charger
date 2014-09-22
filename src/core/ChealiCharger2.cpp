@@ -72,9 +72,9 @@ void setup()
     Timer::delay(START_DELAY_MS); //waiting common display charger for display relase
 #endif
 
-    Screen::displayStrings(PSTR("Cheali-Charger m"),
-                           PSTR("v"  CHEALI_CHARGER_VERSION_STRING));
-    Timer::delay(1000); 
+    Screen::displayStrings(PSTR(CHEALI_CHARGER_PROJECT_NAME),
+                           PSTR("v" CHEALI_CHARGER_FULLVERSION_STRING));
+    Timer::delay(1000);
     eeprom::restoreDefault();
     
 #ifdef ENABLE_RAM_CG

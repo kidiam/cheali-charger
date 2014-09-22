@@ -1,34 +1,36 @@
 cmake_minimum_required(VERSION 2.6)
 
-MACRO (TODAY RESULT) 
-        EXECUTE_PROCESS(COMMAND "date" "+%Y%m%d" OUTPUT_VARIABLE ${RESULT}) 
-        string(REGEX REPLACE "(..)/(..)/..(..).*" "\\1\\2\\3" ${RESULT} ${${RESULT}}) 
-        string(REGEX REPLACE "(\r?\n)+$" "" ${RESULT} ${${RESULT}}) 
-ENDMACRO (TODAY) 
-
-
-
-
-
 SET(CMAKE_SYSTEM_NAME Generic)
 SET(CMAKE_C_COMPILER avr-gcc)
 SET(CMAKE_CXX_COMPILER avr-g++)
 
 Project(cheali-charger-mod)
 
+find_package(UnixCommands)
 
-  
+MACRO (TODAY RESULT)
+    if(BASH)
+        EXECUTE_PROCESS(COMMAND "date" "+%Y%m%d" OUTPUT_VARIABLE ${RESULT})
+        string(REGEX REPLACE "(..)/(..)/..(..).*" "\\1\\2\\3" ${RESULT} ${${RESULT}})
+        string(REGEX REPLACE "(\r?\n)+$" "" ${RESULT} ${${RESULT}})
+    else(BASH)
+        string(TIMESTAMP ${RESULT})
+    endif(BASH)
+ENDMACRO (TODAY)
 
-TODAY(RESULT)
-set(cheali-charger-buildnumber ${RESULT})
+TODAY(timestamp)
+set(cheali-charger-project-name ${PROJECT_NAME})
+set(cheali-charger-buildid ${timestamp})
 set(cheali-charger-version 0.33m)
 set(cheali-charger-eeprom-calibration-version 8)
 set(cheali-charger-eeprom-programdata-version 51)
 set(cheali-charger-eeprom-settings-version 56)
 
-
-
 configure_file(src/core/Version.h.in src/core/Version.h)
+
+message(STATUS "Compilation date: ${timestamp}")
+message(STATUS "Project name: ${cheali-charger-project-name}")
+message(STATUS "version: ${cheali-charger-version}")
 
 
 if(ARM-Cortex-M0)
@@ -38,7 +40,6 @@ if(ARM-Cortex-M0)
     add_subdirectory(src/hardware/imaxB6-clone-ARM-Cortex-M0)
 else(ARM-Cortex-M0)
     message(STATUS "target: avr")
-    message(STATUS "Compilation date = ${RESULT}") 
 
     include(avr-compiler.cmake)
     add_subdirectory(src/core/atmega32)

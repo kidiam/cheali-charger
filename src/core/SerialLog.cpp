@@ -298,41 +298,4 @@ void sendTime()
 
 }
 
-void printV(char c,uint8_t nr, AnalogInputs::ValueType value)
-{
-    printChar(c);
-    printUInt(nr);
-    printChar('=');
-    printUInt(value);
-    printNL();
-}
-
-void dumpCalibration()
-{
-    printString("V=" CHEALI_CHARGER_VERSION_STRING);
-    printNL();
-    printV('E',0,CHEALI_CHARGER_EEPROM_CALIBRATION_VERSION);
-    printV('E',1,CHEALI_CHARGER_EEPROM_PROGRAMDATA_VERSION);
-    printV('E',2,CHEALI_CHARGER_EEPROM_SETTINGS_VERSION);
-
-    AnalogInputs::CalibrationPoint p;
-    FOR_ALL_PHY_INPUTS(it) {
-        AnalogInputs::getCalibrationPoint(p,it,0);
-        printV('a',it, p.x);
-        printV('r',it, p.y);
-        AnalogInputs::getCalibrationPoint(p,it,1);
-        printV('A',it, p.x);
-        printV('R',it, p.y);
-    }
-}
-void sendCalibration()
-{
-    serialBegin();
-    dumpCalibration();
-    printNL();
-    dumpCalibration();
-    printNL();
-    serialEnd();
-}
-
 } //namespace SerialLog
