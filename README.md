@@ -51,10 +51,10 @@ Use an external temperature probe.
 (if You like your house ;) )
 
 
-
 Hardware
---------
-Atmega32 CPU:
+========
+Atmega32 CPU
+------------
 - G.T. POWER A6-10 200W
 - IMAX B6 Charger/Discharger 1-6 Cells (clone, original)
 - AC/DC Dual Power B6AC 80W RC Balance Charger/Discharger
@@ -62,21 +62,43 @@ Atmega32 CPU:
 - Turnigy Accucel-6 50W 5A Balancer/Charger w/ Accessories
 - Turnigy Accucel-8 150W 7A Balancer/Charger
 - Turnigy MEGA 400Wx2 Battery Charger/Discharger (800W)
-- ... much more
+- ... many more
 
-Nuvoton NuMicro M0517LBN CPU:
+Nuvoton NuMicro M0517LBN CPU
+----------------------------
 - IMAX B6 Charger/Discharger 1-6 Cells
 
 
 Usage:
 ======
 
-To use the charger you need to ![calibrate](https://github.com/stawel/cheali-charger/blob/master/README.md#calibration-imax-b6-and-gt-power-a6-10-200w)  
-it first.
+After [flashing](docs/flashing.md) your charger the first thing you should do is  
+to [calibrate](README.md#calibration) it, after that your charger is ready to use.
 
+programming you charger:
+- select a free battery slot (indicated as 1., 2.,...)
+- go to "edit battery"
+ - change battery type "Bat:"
+ - set battery voltage (number of cells) "V:"
+ - set battery capacity "Ch:"
+ - set charge current "Ic:"
+ - set discharge current "Id:"
+ - set time limit "Tlim:" (can be unlimited)
+ - press "create name"
 
-Flashing
---------
+charing/discharging...:
+- select your battery
+- select desired program: "charge", "discharge"...
+- you should see a "info" screen,  
+  (if you hear a beeping, something is wrong connected)
+- hold the "start" button for 2s to start the program
+- charger is working now, press "inc", "dec" to see more screens
+- to exit the program press "stop"
+
+learn more about [settings](docs/settings.md).
+
+[Flashing](docs/flashing.md)
+----------------------------
 
 Calibration
 -----------
@@ -109,37 +131,11 @@ go to: "options"->"calibrate":
 
 Done.
 
-Calibration - Expert (IMAX B6)
-------------------------------
-If you want to improve the accuracy of the balancing on the first two cells you can try  
-to calibrate the voltage on the first three pins of the balance port.
-BE AWARE THAT ON SOME CHARGERS THIS CAN BE DANGEROUS!!!
+[Calibration - Expert (IMAX B6) - optional](docs/caligration_expert.md)
+-----------------------------------------------------------------------
 
-First check if you can safely proceed by using the following test:
-
-- disconnect everything from the charger
-- measure the resistance between GND and Pin "0" on the balance port  
-  (this is the furthest pin from the battery terminals and is  
-  common to all balance port connectors)
-  you can use GND from ISP connector (programmer connector) or any other GND on the charger
-- if the resistance is very low (less than 1k Ohm) STOP THIS PROCEDURE!
-
-If the measured resistance is much higher than 1k Ohm you can proceed as follows:
-
-- connect the power supply to the ImaxB6 and go to "options" -> "calibrate" -> "expert DANGER!"
-  - connect a 1.5V battery and a resistor (1k Ohm to 10kOhm) in the following manner:  
-    connect ImaxB6 GND to one end of the resistor, the other end to the negative pole of the battery,  
-    and the positive pole of the battery to Pin "0" (as above) on the balance port  
-    you can use GND from ISP connector (programmer connector)
-  - with a multimeter measure the voltage between GND and Pin "0" on the balance port.
-    Adjust "Vb0pin" to this value using the inc/dec buttons
-  - disconnect the 1.5V battery
-- repeat the same steps as before for Pin "1" (balance port first cell)  
-  you can use a higer voltage battery ~4.20V
-- repeat the same steps as before for Pin "2" (balance port seccond cell)  
-  you can use a higer voltage battery ~8.40V
-- you can repeat the same steps for the batteries (-) terminal  
-  for that you should use a 1.5V battery
+[Building from Source](docs/building.md)
+----------------------------------------
 
 
 Troubleshooting
@@ -156,67 +152,14 @@ Troubleshooting
     - linux:   avrdude     -patmega32 -cusbasp -Uhfuse:w:0xc5:m -Ulfuse:w:0x3f:m
 
 
+other useful materials
+----------------------
+TODO
+
 Mailing list
 ============
 If you have any questions or suggestions please write to us at: cheali-chargerATgooglegroups.com  
 or visit: http://groups.google.com/group/cheali-charger  
 The mailing list is open for all.
 
-
-Building from Source
-====================
-atmega32 - linux
-----------------
-dependencies: git, cmake, avrdude, avr-libc, gcc-avr
-<pre>
-user@~$ sudo apt-get install cmake avrdude avr-libc gcc-avr git
-user@~$ git clone https://github.com/stawel/cheali-charger.git
-user@~$ cd cheali-charger
-user@~/cheali-charger$ ./bootstrap
-user@~/cheali-charger$ make
-
-flashing <charger> with USBasp:
-
-user@~/cheali-charger$ cd src/hardware/atmega32/targets/<charger>
-user@~/cheali-charger/src/hardware/atmega32/targets/<charger>$ ./progUSBasp.sh
-</pre>
-
-Now You should see a "cheali-charger welcome" screen.
-Done.
-
-
-nuvoton M0517 - linux
----------------------
-
-dependencies: git, cmake, gcc-arm-none-eabi, openocd (patched)
-
-<pre>
-user@~$ sudo apt-get install git cmake  gcc-arm-none-eabi
-user@~$ git clone https://github.com/stawel/cheali-charger.git
-user@~$ cd cheali-charger
-user@~/cheali-charger$ ./bootstrap-arm
-user@~/cheali-charger$ make
-
-flashing <charger> with st-link-V2 or stm32f4discovery:
-(patched openocd needed)
-
-user@~/cheali-charger$ cd src/hardware/nuvoton-M0517/targets/<charger>
-user@~/cheali-charger/src/hardware/nuvoton-M0517/targets/<charger>$ ./progStLink.sh
-</pre>
-
-Now You should see a "cheali-charger welcome" screen.
-Done.
-
-atmega32 - windows
-------------------
-TODO
-
-nuvoton M0517 - windows
------------------------
-TODO
-
-
 Have fun!
-
-
-
