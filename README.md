@@ -1,8 +1,8 @@
 Welcome to cheali-charger!
 ==========================
 
-This project is an alternative firmware for a variety of lipo chargers.  
-see: [hardware](README.md#hardware)
+This project is an alternative firmware for a variety of lipo chargers,  
+see [hardware](README.md#hardware)
 
 Don't use it if You don't need to  
 (not everything is implemented yet).  
@@ -47,8 +47,8 @@ Features
 
 WARNING
 -------
-Please CALIBRATE the charger before use!  
-Use an external temperature probe.  
+Please [CALIBRATE](README.md#calibration) charger before use!  
+Use an external temperature probe  
 (if You like your house ;) )
 
 
@@ -86,15 +86,15 @@ programming you charger:
  - press "create name"
 
 charing/discharging...:
-- select your battery
-- select desired program: "charge", "discharge"...
+- select battery
+- select program: "charge", "discharge"...
 - you should see a "info" screen,  
-  (if you hear a beeping, something is wrong connected)
+  (if you hear some beeping, check your battery connections)
 - hold the "start" button for 2s to start the program
 - charger is working now, press "inc", "dec" to see more screens
 - to exit the program press "stop"
 
-learn more about [settings](docs/settings.md).
+Informations about [settings](docs/settings.md).
 
 [Flashing](docs/flashing.md)
 ----------------------------
@@ -136,16 +136,15 @@ Done.
 [Building from Source](docs/building.md)
 ----------------------------------------
 
-
 Troubleshooting
 ---------------
-- After flashing charger doesn't work (display shows squares):
+1. After flashing charger doesn't work (display shows squares):
   - download the *.hex again, use the "RAW" button in github
   - check the sha1 sum of the file, compare it with *.sha1:
     - linux: $sha1sum cheali-charger*.hex
     - windows: install http://www.microsoft.com/en-us/download/details.aspx?id=11533
       - in cmd.exe: fciv.exe -sha1 -add cheali-charger-*.hex
-- The sha1 sum is correct and the charger still doesn't work (display shows squares):
+2. The sha1 sum is correct and the charger still doesn't work (display shows squares):
   - reset atmega32 fuses using avrdude:
     - windows: avrdude.exe -patmega32 -cusbasp -Uhfuse:w:0xc5:m -Ulfuse:w:0x3f:m
     - linux:   avrdude     -patmega32 -cusbasp -Uhfuse:w:0xc5:m -Ulfuse:w:0x3f:m
