@@ -10,7 +10,7 @@ Any feedback is very welcome!
 http://groups.google.com/group/cheali-charger
 
 Features
-========
+--------
 - Li-ion, LiPo, LiPo-4.30V, LiPo-4.35V, LiFe:
   - charging
   - fast charging
@@ -45,16 +45,15 @@ Features
 
 
 WARNING
-=======
+-------
 Please CALIBRATE the charger before use!  
 Use an external temperature probe.  
 (if You like your house ;) )
 
 
 Hardware
-========
-Atmega32 CPU
-------------
+--------
+**Atmega32 CPU**
 - G.T. POWER A6-10 200W
 - IMAX B6 Charger/Discharger 1-6 Cells (clone, original)
 - AC/DC Dual Power B6AC 80W RC Balance Charger/Discharger
@@ -64,8 +63,7 @@ Atmega32 CPU
 - Turnigy MEGA 400Wx2 Battery Charger/Discharger (800W)
 - ... many more
 
-Nuvoton NuMicro M0517LBN CPU
-----------------------------
+**Nuvoton NuMicro M0517LBN CPU**
 - IMAX B6 Charger/Discharger 1-6 Cells
 
 
