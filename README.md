@@ -1,4 +1,5 @@
 Welcome to cheali-charger!
+==========================
 
 This project is an alternative firmware for a variety of lipo chargers.  
 see: [hardware](README.md#hardware)
@@ -53,7 +54,7 @@ Use an external temperature probe.
 
 Hardware
 --------
-**Atmega32 CPU**
+**Atmega32 CPU:**
 - G.T. POWER A6-10 200W
 - IMAX B6 Charger/Discharger 1-6 Cells (clone, original)
 - AC/DC Dual Power B6AC 80W RC Balance Charger/Discharger
@@ -63,12 +64,12 @@ Hardware
 - Turnigy MEGA 400Wx2 Battery Charger/Discharger (800W)
 - ... many more
 
-**Nuvoton NuMicro M0517LBN CPU**
+**Nuvoton NuMicro M0517LBN CPU:**
 - IMAX B6 Charger/Discharger 1-6 Cells
 
 
 Usage:
-======
+------
 
 After [flashing](docs/flashing.md) your charger the first thing you should do is  
 to [calibrate](README.md#calibration) it, after that your charger is ready to use.
@@ -155,7 +156,8 @@ other useful materials
 TODO
 
 Mailing list
-============
+------------
+
 If you have any questions or suggestions please write to us at: cheali-chargerATgooglegroups.com  
 or visit: http://groups.google.com/group/cheali-charger  
 The mailing list is open for all.
