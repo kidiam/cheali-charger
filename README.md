@@ -1,7 +1,7 @@
 Welcome to cheali-charger!
 
 This project is an alternative firmware for a variety of lipo chargers.  
-see: ![hardware](https://github.com/stawel/cheali-charger#hardware)
+see: [hardware](README.md#hardware)
 
 Don't use it if You don't need to  
 (not everything is implemented yet).  
