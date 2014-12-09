@@ -5,10 +5,14 @@ Flashing
 Flashing: atmega32 CPU charger
 -------------------------------
 
-- Connect a standard AVR ISP 10-pin cable to the board: 
-  - G.T. POWER A6-10 200W: https://github.com/stawel/cheali-charger/blob/master/docs/GTPowerA6-10/front.jpg
-  - IMAX B6 - original: https://github.com/stawel/cheali-charger/blob/master/docs/imaxB6/imaxB6-original-front.jpg
-  - IMAX B6 - clone: 
+- Connect a standard AVR ISP cable to the board:
+  - G.T. POWER A6-10 200W:  
+  ![isp](connectors/isp_GTPowerA6-10.jpeg)
+  - IMAX B6 - original:  
+  ![isp](connectors/isp_imaxB6.jpeg)
+  - IMAX B6 - clone:  
+  ![isp](isp_imaxB6_clone.jpeg)
+
 - use any atmel flash tool you like (for example avrdude)
 - set "Device" to: atmega32
 - use the cheali-charger/hex/cheali-charger-GTPowerA6-10-0.33.hex file as "Flash"
