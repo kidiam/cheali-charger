@@ -11,7 +11,7 @@ Flashing: atmega32 CPU charger
   - IMAX B6 - original:  
   ![isp](connectors/isp_imaxB6.jpeg)
   - IMAX B6 - clone:  
-  ![isp](isp_imaxB6_clone.jpeg)
+  ![isp](connectors/isp_imaxB6_clone.jpeg)
 
 - use any atmel flash tool you like (for example avrdude)
 - set "Device" to: atmega32
