@@ -130,7 +130,7 @@ go to: "options"->"calibrate":
 
 Done.
 
-[Calibration - Expert (IMAX B6) - optional](docs/caligration_expert.md)
+[Calibration - Expert (IMAX B6) - optional](docs/calibration_expert.md)
 -----------------------------------------------------------------------
 
 [Building from Source](docs/building.md)
