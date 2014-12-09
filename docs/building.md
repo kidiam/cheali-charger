@@ -12,10 +12,10 @@ user@~$ cd cheali-charger
 user@~/cheali-charger$ ./bootstrap
 user@~/cheali-charger$ make
       
-flashing <charger> with USBasp:
+flashing [your charger] with USBasp:
     
-user@~/cheali-charger$ cd src/hardware/atmega32/targets/<charger>
-user@~/cheali-charger/src/hardware/atmega32/targets/<charger>$ ./progUSBasp.sh
+user@~/cheali-charger$ cd src/hardware/atmega32/targets/[your charger]
+user@~/cheali-charger/src/hardware/atmega32/targets/[your charger]$ ./progUSBasp.sh
 </pre>
       
 Now You should see a "cheali-charger welcome" screen.
