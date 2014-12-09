@@ -45,25 +45,30 @@ Now You should see a "cheali-charger welcome" screen.
 atmega32 - windows
 ------------------
 **Atmel Studio**
-1. install [Atmel Studio](http://www.atmel.com/tools/atmelstudio.aspx) and [cmake](http://www.cmake.org/)
-2. start a "Atmel Studio Command Prompt" and go to your cheali-charger directory.
-3. run:
+- install [Atmel Studio](http://www.atmel.com/tools/atmelstudio.aspx) and [cmake](http://www.cmake.org/)
+- start a "Atmel Studio Command Prompt" and go to your cheali-charger directory.
+- run:
+<pre>
   s:\cheali-charger> cmake . -G "Unix Makefiles"
   s:\cheali-charger> make
-4. hex file should be in s:\cheali-charger\src\atmega32\targets\[your charger]\cheali-charger*.hex
+</pre>
+- hex file should be in s:\cheali-charger\src\atmega32\targets\[your charger]\cheali-charger*.hex
+
 
 **cygwin**
-1. install [cygwin](https://www.cygwin.com/)
-2. in cygwin install: cmake avrdude avr-libc gcc-avr git make
-3. in cygwin run:
+- install [cygwin](https://www.cygwin.com/)
+- in cygwin install: cmake avrdude avr-libc gcc-avr git make
+- in cygwin run:
+<pre>
   ~/cheali-charger$ ./bootstrap
   ~/cheali-charger$ make
-4. hex file should be in ~/cheali-charger/src/atmega32/targets/[your charger]/cheali-charger*.hex
+</pre>
+- hex file should be in ~/cheali-charger/src/atmega32/targets/[your charger]/cheali-charger*.hex
 
 
 nuvoton M0517 - windows
 -----------------------
-1. install [CooCox CoIDE](http://www.coocox.org/)
-2. import project: cheali-charger\CoIDE\cheali-charger.coproj
-3. build
+- install [CooCox CoIDE](http://www.coocox.org/)
+- import project: cheali-charger\CoIDE\cheali-charger.coproj
+- build
 
