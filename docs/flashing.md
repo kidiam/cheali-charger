@@ -37,7 +37,7 @@ check ISP pins (at least GND and VCC) on your chargers PCB board:
 ![isp](connectors/isp_imaxB6_M0517.jpeg)
 
 - [Bu-Link](http://www.aliexpress.com/item/Free-Shipping-1SET-Bu-Link-Compatible-Nuvoton-Nu-Link-for-all-Cortex-M0-MINI51-M052-NUC120/1570055317.html):
-  - Bu-Lint isp connector:  
+  - Bu-Link isp connector:  
   ![isp_programmer](connectors/isp_bu-link.jpg)
   - make a appropriate cable
   - use: [nuvoton icp programming tool](http://download.nuvoton.com/NuvotonMOSS/DownloadService/Member/DocumentsInfo.aspx?tp_GUID=SW0520101208200310)
@@ -47,7 +47,7 @@ check ISP pins (at least GND and VCC) on your chargers PCB board:
   - [read](https://groups.google.com/d/msg/cheali-charger/2Rz-dtwZ5Is/zUGr3PzX9bcJ)
 
 - flashing and debugging M0517LBN with CoIDE: TODO
-- flashing and debugging M0517LBN with openocd: TODO
+- flashing and debugging M0517LBN with OpenOCD: TODO
 
 Differences between cheali-charger versions
 -------------------------------------------
