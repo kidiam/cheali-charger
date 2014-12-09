@@ -5,7 +5,7 @@ Flashing
 Flashing: atmega32 CPU charger
 -------------------------------
 
-- Connect a standard AVR ISP cable to the board:
+- check ISP pins on your chargers PCB board, at least GND and VCC:
   - G.T. POWER A6-10 200W:  
   ![isp](connectors/isp_GTPowerA6-10.jpeg)
   - IMAX B6 - original:  
@@ -13,17 +13,32 @@ Flashing: atmega32 CPU charger
   - IMAX B6 - clone:  
   ![isp](connectors/isp_imaxB6_clone.jpeg)
 
-- use any atmel flash tool you like (for example avrdude)
-- set "Device" to: atmega32
-- use the cheali-charger/hex/cheali-charger-GTPowerA6-10-0.33.hex file as "Flash"
+- select the appropriate [hex file](flashing.md#differences)
+- flasing using [avrdude:](http://www.nongnu.org/avrdude/)
+<pre>
+(try to make a backup)
+avrdude.exe -patmega32 -cusbasp -Uflash:r:flash.hex:r -Ulfuse:r:lfuse.hex:r -Uhfuse:r:hfuse.hex:r -Ueeprom:r:eeprom.hex:r
+
+(flash cheali-charger into program memory)
+avrdude.exe -patmega32 -cusbasp -Uflash:w:cheali-charger-[VERSION].hex:a
+
+(you may want to change "-cusbasp" according to your programmer)
+</pre>
+- or use any other avr programming tool
+WARNING: Do not touch the AVR fuses, setting them wrong could destroy the charger.
 
 
-Flashing: IMAX B6
--------------------------------
+Flashing: nuvoton M0517LBN CPU charger
+--------------------------------------
 
-- Connect a AVR ISP to the board, make sure that you have the appropriate connector!
-    - IMAX B6 - original: 
-    - IMAX B6 - clone: https://github.com/stawel/cheali-charger/blob/master/docs/imaxB6/imaxB6-clone-front.jpg
-- set "Device" to: atmega32
-- use the cheali-charger/hex/cheali-charger-imaxB6-original-0.33.hex  (or cheali-charger-imaxB6-clone-0.33.hex) file as "Flash"
+check ISP pins on your chargers PCB board, at least GND and VCC:  
+![isp](connectors/isp_imaxB6_M0517.jpeg)
 
+- [Bu-Link]:(http://www.aliexpress.com/item/Free-Shipping-1SET-Bu-Link-Compatible-Nuvoton-Nu-Link-for-all-Cortex-M0-MINI51-M052-NUC120/1570055317.html)):
+  ![isp_programmer](imaxB6_nuvoton-M0517/bu-link-connector.jpg)
+  - make the appropriate cables
+  - use: [nuvoton icp programming tool](http://download.nuvoton.com/NuvotonMOSS/DownloadService/Member/DocumentsInfo.aspx?tp_GUID=SW0520101208200310)
+   (try to make a backup first!)
+
+Differences between cheali-charger versions
+-------------------------------------------
