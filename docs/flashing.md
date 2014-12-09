@@ -36,9 +36,9 @@ Flashing: nuvoton M0517LBN CPU charger
 check ISP pins (at least GND and VCC) on your chargers PCB board:  
 ![isp](connectors/isp_imaxB6_M0517.jpeg)
 
-- [Bu-Link](http://www.aliexpress.com/item/Free-Shipping-1SET-Bu-Link-Compatible-Nuvoton-Nu-Link-for-all-Cortex-M0-MINI51-M052-NUC120/1570055317.html):
+- [Bu-Link](http://www.aliexpress.com/item/Free-Shipping-1SET-Bu-Link-Compatible-Nuvoton-Nu-Link-for-all-Cortex-M0-MINI51-M052-NUC120/1570055317.html):  
   ![isp_programmer](connectors/isp_bu-link.jpg)
-  - make the appropriate cables
+  - make a appropriate cables
   - use: [nuvoton icp programming tool](http://download.nuvoton.com/NuvotonMOSS/DownloadService/Member/DocumentsInfo.aspx?tp_GUID=SW0520101208200310)
    (try to make a backup first!)
 
