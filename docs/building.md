@@ -32,11 +32,11 @@ user@~$ cd cheali-charger
 user@~/cheali-charger$ ./bootstrap-arm
 user@~/cheali-charger$ make
 
-flashing <charger> with st-link-V2 or stm32f4discovery:
+flashing [your charger] with st-link-V2 or stm32f4discovery:
 (patched openocd needed)
   
-user@~/cheali-charger$ cd src/hardware/nuvoton-M0517/targets/<charger>
-user@~/cheali-charger/src/hardware/nuvoton-M0517/targets/<charger>$ ./progStLink.sh
+user@~/cheali-charger$ cd src/hardware/nuvoton-M0517/targets/[your charger]
+user@~/cheali-charger/src/hardware/nuvoton-M0517/targets/[your charger]$ ./progStLink.sh
 </pre>
       
 Now You should see a "cheali-charger welcome" screen.
@@ -52,7 +52,7 @@ atmega32 - windows
   s:\cheali-charger> cmake . -G "Unix Makefiles"
   s:\cheali-charger> make
 </pre>
-- hex file should be in s:\cheali-charger\src\atmega32\targets\[your charger]\cheali-charger*.hex
+- hex file should be in s:\cheali-charger\src\atmega32\targets\\[your charger]\cheali-charger*.hex
 
 
 **cygwin**
