@@ -56,12 +56,13 @@ Hardware
 --------
 **Atmega32 CPU:**
 - G.T. POWER A6-10 200W
-- IMAX B6 Charger/Discharger 1-6 Cells (clone, original)
-- AC/DC Dual Power B6AC 80W RC Balance Charger/Discharger
-- Turnigy A-6-10 200W Balance charger & discharger
+- IMAX B6 Charger/Discharger 1-6 Cells ([clone](http://www.hobbyking.com/hobbyking/store/__15379__IMAX_B6_Charger_Discharger_1_6_Cells_COPY_.html), 
+                                      [original](http://www.hobbyking.com/hobbyking/store/__5548__IMAX_B6_Charger_Discharger_1_6_Cells_GENUINE_.html)
+- [AC/DC Dual Power B6AC 80W RC Balance Charger/Discharger](http://www.dx.com/p/2-5-lcd-ac-dc-dual-power-b6ac-80w-rc-balance-charger-discharger-123252)
+- [Turnigy A-6-10 200W Balance charger & discharger](http://www.hobbyking.com/hobbyking/store/__11444__Turnigy_A_6_10_200W_Balance_charger_discharger.html)
 - Turnigy Accucel-6 50W 5A Balancer/Charger w/ Accessories
-- Turnigy Accucel-8 150W 7A Balancer/Charger
-- Turnigy MEGA 400Wx2 Battery Charger/Discharger (800W)
+- [Turnigy Accucel-8 150W 7A Balancer/Charger](http://www.hobbyking.com/hobbyking/store/__49059__Turnigy_Accucel_8_150W_7A_Balancer_Charger_CN_Warehouse_.html)
+- [Turnigy MEGA 400Wx2 Battery Charger/Discharger (800W)](http://www.hobbyking.com/hobbyking/store/__41183__Turnigy_MEGA_400Wx2_Battery_Charger_Discharger_800W_US_Warehouse_.html)
 - ... many more
 
 **Nuvoton NuMicro M0517LBN CPU:**
