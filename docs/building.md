@@ -76,3 +76,29 @@ nuvoton M0517 - windows
 - import project: cheali-charger\CoIDE\cheali-charger.coproj
 - build
 
+
+atmega32 - OSX
+--------------
+dependencies: git, cmake, avrdude, avr-libc, gcc-avr
+
+install [macports](https://www.macports.org/)
+
+<pre>
+user@~$ sudo port install cmake avrdude avr-libc gcc-avr git
+user@~$ git clone https://github.com/stawel/cheali-charger.git
+user@~$ cd cheali-charger
+user@~/cheali-charger$ ./bootstrap
+user@~/cheali-charger$ make
+      
+flashing [your charger] with USBasp:
+      
+user@~/cheali-charger$ cd src/hardware/atmega32/targets/[your charger]
+user@~/cheali-charger/src/hardware/atmega32/targets/[your charger]$ ./progUSBasp.sh
+</pre>
+      
+Now You should see a "cheali-charger welcome" screen.
+
+nuvoton M0517 - OSX
+-------------------
+(TODO)
+
