@@ -23,10 +23,14 @@ Now You should see a "cheali-charger welcome" screen.
 
 nuvoton M0517 - linux
 ---------------------
-dependencies: git, cmake, gcc-arm-none-eabi, openocd (patched)
+dependencies: git, cmake, gcc-arm-none-eabi, openocd (patched)  
+
+install [gcc-arm-none-eabi](https://launchpad.net/~terry.guo/+archive/ubuntu/gcc-arm-embedded)  
+compile and install [openocd (patched)](https://github.com/stawel/openocd)  
+copy [openocd/contrib/99-openocd.rules](https://github.com/stawel/openocd/blob/master/contrib/99-openocd.rules) to /etc/udev/rules.d
 
 <pre>
-user@~$ sudo apt-get install git cmake  gcc-arm-none-eabi
+user@~$ sudo apt-get install git cmake
 user@~$ git clone https://github.com/stawel/cheali-charger.git
 user@~$ cd cheali-charger
 user@~/cheali-charger$ ./bootstrap-arm
